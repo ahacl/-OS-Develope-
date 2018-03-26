@@ -1,0 +1,32 @@
+19:14:44 **** Incremental Build of configuration Default for project MINT64 ****
+make all 
+
+=============== Build Boot Loader ===============
+
+make -C 00.BootLoader
+make[1]: 디렉터리 '/home/ahacl/eclipse-workspace/MINT64/00.BootLoader' 들어감
+nasm -o BootLoader.bin BootLoader.asm
+make[1]: 디렉터리 '/home/ahacl/eclipse-workspace/MINT64/00.BootLoader' 나감
+
+================ Build Complete ================
+
+
+=============== Build 32bit Kernel ================
+
+make -C 01.Kernel32
+make[1]: 디렉터리 '/home/ahacl/eclipse-workspace/MINT64/01.Kernel32' 들어감
+make[1]: 'all'을(를) 위해 할 일이 없습니다.
+make[1]: 디렉터리 '/home/ahacl/eclipse-workspace/MINT64/01.Kernel32' 나감
+
+================= Build Complete ================
+
+
+=========== Disk Image Build Start ===========
+
+cat 00.BootLoader/BootLoader.bin 01.Kernel32/Kernel32.bin > Disk.img
+
+============= All Build Complete =============
+
+
+19:14:44 Build Finished (took 182ms)
+
